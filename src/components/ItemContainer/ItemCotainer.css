@@ -1,0 +1,14 @@
+.pr {
+  font-size: 30px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.pr .imgRoland {
+  width: 70%;
+}
+.pr .ofertaContainer {
+  text-align: center;
+}/*# sourceMappingURL=ItemCotainer.css.map */
