@@ -1,0 +1,21 @@
+.Container-Cli{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn-clicker{
+    display: flex;
+    background-color: rgb(35, 123, 223);
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 5px;
+   
+}
+.Clickr{
+    background-color: white;
+    border-radius: 3px;
+    color: black;
+    display:flex;
+    padding: 5px;
+}
+

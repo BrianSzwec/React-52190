@@ -7,8 +7,9 @@
 
 body{
   
-  background-color: rgb(128, 130, 152);
-  
+  background-image: url(https://imprenta-offset.com/wp-content/uploads/2021/11/imprenta-online-barata.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 

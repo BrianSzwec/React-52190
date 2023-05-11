@@ -1,3 +1,5 @@
 @import url(./components/Navbar/Navbar.scss);
-@import url(./components/ItemContainer/ItemCotainer.css);
-@import url(./components/Cartwidg/carrito.scss);
+@import url(./components/ItemContainer/ItemContainer.css);
+@import url(./components/Cartwidget/carrito.css);
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url(../src/utils/CLICKER/Clicker.css);

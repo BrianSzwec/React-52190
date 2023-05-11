@@ -1,16 +1,16 @@
-import foto from '../../assets/react.svg'
-import logo from '../../assets/carro.svg'
-import CartWidget from '../Cartwidg/Cartwidget'
-
+import foto from '../../assets/LogoSch.svg'
+import CartWidget from '../Cartwidget/Cartwidget'
+import { Link } from 'react-router-dom'
 const Navbar = () => {
     return (
         <header className="navHeader">
             <div className="navContainer">
-                <img src={foto} alt="prueba" />
-                <h1 className="sch1">SCH</h1>
+                <img src={foto} alt="logosch" className='schlogo'/>
+                
                 <nav className="navbar">
-                    <a href="" className="navbar-link">Productos</a>
-                    <a href="" className="navbar-link">Historia</a>
+                    <Link to="./productos" className="navbar-link">Productos</Link>
+                    <Link to="./categoria" className="navbar-link">Categorias</Link>
+                    <Link to="./historia" className="navbar-link">Historia</Link>
                 </nav>
 
                 <CartWidget/>
