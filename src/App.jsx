@@ -3,9 +3,9 @@ import "./styles.scss"
 import Navbar from "./components/NavBar/navbar"
 import { ItemListContainer } from "./components/ItemContainer/ItemListContainer"
 // import {header} from "./components/Header/header"
-import Historia from "./Historia/Historia"
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom" 
-import Category from "./components/Category/Categorias"
+
 
 
 function App() {
@@ -17,12 +17,13 @@ function App() {
     <Routes>
       
       <Route path="/" element={ <ItemListContainer/>} />
-       <Route path="/categorias" element={<Category/>} />
-      <Route path="/historia" element={<Historia/>} />
+      <Route path="/categorias/:categoryId" element={<ItemListContainer/>} />
       <Route path="*" element={<Navigate to={"/"}/> }/>
       
+      <Route path="/detail/:itemId" element={<ItemDetailContainer/>} />
     </Routes>
       
+    
    
      
     
@@ -33,7 +34,6 @@ function App() {
 
     </BrowserRouter>
   
-
 )
 }
 
