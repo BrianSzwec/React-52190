@@ -29,7 +29,7 @@ import ItemDetail from "../itemDetail/itemDetail"
             {
             loading
             ?   <h2>cargando</h2>
-            :   <ItemDetail item={itemId} />
+            :   <ItemDetail item={item} />
             }
          </div>
         
