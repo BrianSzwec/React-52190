@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { Clicker } from "../../utils/CLICKER/Clicker"
+
 
 const ItemList = ({ items }) => {
 
@@ -18,11 +18,7 @@ const ItemList = ({ items }) => {
                             <p>{prod.descripcion}</p>
                             <p>{prod.category}</p>
                             <h4><strong>$ {prod.precio}</strong></h4>
-                            <div className="d-flex justify-content-center my-3">
-                                <Clicker product={prod} />
-                                
-                           
-                            </div>
+                            
                             <div>
                                 </div>
                                 <Link to={`/detail/${prod.id}`} className="btn btn-primary">ver mas</Link>

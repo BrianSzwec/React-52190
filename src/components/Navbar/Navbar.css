@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 60px;
+  gap: 150px;
 }
 .navHeader .navbar-link {
   color: black;
@@ -29,4 +29,8 @@
   font-weight: 1000;
   text-transform: uppercase;
   cursor: pointer;
+}
+.navHeader .schlogo {
+  width: 100px;
+  height: 50px;
 }/*# sourceMappingURL=Navbar.css.map */

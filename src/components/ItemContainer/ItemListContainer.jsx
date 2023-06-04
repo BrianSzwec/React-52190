@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import { pedirData } from "../../utils/pedirDatos"
+import { collection, getDocs, query,where } from "firebase/firestore"
 import ItemList from "../itemList/itemList"
 import { useParams } from "react-router-dom"
-
+import { db } from "../../firebase/config"
 
 
 
@@ -21,17 +21,31 @@ export const ItemListContainer = () => {
     useEffect(() => {
         setLoading(true)
 
-        pedirData()
+
+            const productosRef = collection (db, "Productos")
+
+            const q = categoryId
+                        
+                        ?query(productosRef,where("category", "==", categoryId) )
+                        : productosRef
+            
+            getDocs(q)
+
+            
+            .then((res) => {
+                const docs = res.docs.map((doc) => {
+                    return {
+                        ...doc.data(),
+                        id: doc.id
+                    }
+                }  )
+                console.log(docs )
+                setProductos(docs)
+            })
+            .catch(e => console.log(e))
+            .finally(() => setLoading(false))
+
         
-        .then((data) => {
-            if (!categoryId){
-                setProductos(data) 
-            }else{
-                setProductos(data.filter((el) => el.category === categoryId))
-            }
-        })
-        .catch((err) =>console.log(err))
-        .finally(()=>setLoading(false))
     }, [categoryId])
             
 

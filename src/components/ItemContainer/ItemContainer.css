@@ -6,9 +6,14 @@
   align-items: center;
   height: 100vh;
 }
-.pr .imgRoland {
-  width: 70%;
-}
 .pr .ofertaContainer {
   text-align: center;
+}
+
+.h2off {
+  background-color: red;
+}
+
+.img-prod {
+  size: 100px;
 }/*# sourceMappingURL=ItemContainer.css.map */

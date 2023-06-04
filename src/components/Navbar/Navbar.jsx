@@ -1,8 +1,13 @@
+
 import foto from '../../assets/LogoSch.svg'
 import CartWidget from '../Cartwidget/Cartwidget'
 import { Link } from 'react-router-dom'
 
+
 const Navbar = () => {
+
+   
+    
     return (
         <header className="navHeader">
             <div className="navContainer">
@@ -15,7 +20,7 @@ const Navbar = () => {
                     <Link to="/categorias/transfer" className="navbar-link">Transfer</Link>
                 </nav>
 
-                <CartWidget/>
+               <CartWidget/>
 
             </div>
 

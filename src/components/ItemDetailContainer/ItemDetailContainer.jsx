@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
-import { pedirData } from "../../utils/pedirDatos"
 import { useParams } from "react-router-dom"
 import ItemDetail from "../itemDetail/itemDetail"
-
-
+import {doc, getDoc} from "firebase/firestore"
+import { db } from "../../firebase/config"
 
         const ItemDetailContainer = () => {
 
@@ -11,16 +10,25 @@ import ItemDetail from "../itemDetail/itemDetail"
             const[loading, setLoading] =useState(true)
 
             const{ itemId } = useParams()
-            console.log(itemId)
-            console.log(item)
+            // console.log(itemId)
+            // console.log(item)
             
         useEffect(()=>{
             setLoading(true)
+            
+            const docRef = doc(db, "Productos", itemId)
 
-             pedirData()     
-             .then((data) =>setItem( data.find((el) =>el.id === parseInt(itemId)) ))
-            .catch(err => console.log(err))
-            .finally( () => setLoading(false))
+             getDoc(docRef)
+             .then((doc)=> {
+                const _item =  {
+                    id: doc.id,
+                    ...doc.data()
+                }
+                setItem(_item)
+                
+            })
+            .catch(e => console.log(e))
+            .finally(() => setLoading(false))
             
         },[itemId])
 
@@ -28,7 +36,7 @@ import ItemDetail from "../itemDetail/itemDetail"
         <div className="container my-5">
             {
             loading
-            ?   <h2>cargando</h2>
+            ?   <h2 className="text-white mx-8 d-flex justify-content-center align-items-center"><strong>Cargando...</strong></h2>
             :   <ItemDetail item={item} />
             }
          </div>
